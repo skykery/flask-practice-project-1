@@ -25,7 +25,7 @@ The following exercises will lead to a simple quotes manager application where y
 4. In the templates directory, you'll find a `add.html` file which contains an HTML form. Complete the `add` method found in `app.py` to get the submitted data from the form (author, quote) and print it in the console.
 5. For the template files mentioned above `contact.html`, `add.html` and the future ones, adapt them to the new structure, using the base template.
 6. Make a new route `/view` where its method accepts two arguments author and quote. In this one, render the `view.html` template passing the author and quote kwargs like in this [example](https://flask.palletsprojects.com/en/2.1.x/quickstart/#rendering-templates).
-7. On the method for route `/add`, after you are loading the form data, return a redirect to the `/show` route and pass the required kwargs [example](https://flask.palletsprojects.com/en/2.1.x/quickstart/#rendering-templates).
+7. On the method for route `/add`, after you are loading the form data, return a redirect to the `/view` route and pass the required kwargs [example](https://flask.palletsprojects.com/en/2.1.x/quickstart/#rendering-templates).
 
 ### Database
 Work in progress...
