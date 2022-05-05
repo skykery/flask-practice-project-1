@@ -46,3 +46,4 @@ You can see your new container by typing `docker ps`.
 4. Populate the `insert_quote` method from `DBService` class to connect to your database and insert a received quote with its author in the `famous_quotes` table. It can return its primary key (ID).
 5. Populate the `get_quotes_by_author` method from `DBService` class to make a `SELECT` query and return all quotes with a received author.
 6. Populate the `get_quotes`  method from `DBService` class to return all the quotes from `famous_quotes` table.
+7. Populate the `load_data`  method from `DBService` class to insert in your database quotes from the `data.csv` file. You can read the file line by line or using the [DictReader](https://docs.python.org/3/library/csv.html#csv.DictReader). Also, you can check the inserted data using a [MySQL client](https://ubiq.co/database-blog/top-5-mysql-gui-tools-free-paid/), or by using the `get_quotes` method you have written earlier.

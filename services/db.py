@@ -33,6 +33,9 @@ class DBService:
     def get_quotes(self):
         raise NotImplemented()
 
+    def load_data(self, file_path):
+        raise NotImplemented()
+
 
 if __name__ == '__main__':
     pass
