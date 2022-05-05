@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mariadb:
+    image: bitnami/mariadb:latest
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - mydb:/bitnami
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=user
+      - MARIADB_DATABASE=test
+      - MARIADB_PASSWORD=test
+
+
+volumes:
+  mydb:

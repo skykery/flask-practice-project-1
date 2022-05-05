@@ -28,4 +28,21 @@ The following exercises will lead to a simple quotes manager application where y
 7. On the method for route `/add`, after you are loading the form data, return a redirect to the `/view` route and pass the required kwargs [example](https://flask.palletsprojects.com/en/2.1.x/quickstart/#rendering-templates).
 
 ### Database
-Work in progress...
+_Work in progress..._
+
+I added a mariadb docker service in the `docker-compose.yml` file. You can start the service with `docker-compose up -d`.
+
+If you are not using docker-compose, and want to use the mariadb image directly with `docker`, do the following steps:
+- create a volume for the mariadb container `docker volume create --name mariadb_data`
+- create the mariadb container configured with its persistent volume and the exposed port `3306`
+```commandline
+docker run -d --name mariadb -p 3306:3306 -e ALLOW_EMPTY_PASSWORD=yes -e MARIADB_USER=user -e MARIADB_DATABASE=test -e MARIADB_PASSWORD=test --volume mariadb_data:/bitnami bitnami/mariadb:latest
+```
+You can see your new container by typing `docker ps`.
+
+1. Populate the `get_connection` found at `services/db.py` to return a connection to your database using the `mysql.connector` - [examples](https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html). Also, do not forget to use the right variables from `__init__`.
+2. Populate the `close` and `commit` methods found in the `DBService` class.
+3. In the `__main__` part of `services/db.py` execute a SQL query that creates a new table `famous_quotes` with author and quote as fields. Do not forget to use your `DBService` class.
+4. Populate the `insert_quote` method from `DBService` class to connect to your database and insert a received quote with its author in the `famous_quotes` table. It can return its primary key (ID).
+5. Populate the `get_quotes_by_author` method from `DBService` class to make a `SELECT` query and return all quotes with a received author.
+6. Populate the `get_quotes`  method from `DBService` class to return all the quotes from `famous_quotes` table.
