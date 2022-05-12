@@ -4,11 +4,24 @@
 
 {% block content %}
 <div class="container">
-    <h1 class="title">
-        Hello World
-    </h1>
-    <p>Congrats! You have unlocked a new step.</p>
-    <p><a href="{{ url_for('contact') }}">Contact</a></p>
+    <h1 class="title">Famous quotes</h1>
     <p><a href="{{ url_for('add') }}">Add quote</a></p>
+    <table id="data" class="table table-striped">
+        <thead>
+        <tr>
+            <th>Author</th>
+            <th>Quote</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in quotes %}
+        <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <p><a href="{{ url_for('contact') }}">Contact</a></p>
 </div>
 {% endblock %}
