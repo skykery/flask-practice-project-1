@@ -49,6 +49,7 @@ You can see your new container by typing `docker ps`.
 7. Populate the `load_data`  method from `DBService` class to insert in your database quotes from the `data.csv` file. You can read the file line by line or using the [DictReader](https://docs.python.org/3/library/csv.html#csv.DictReader). Also, you can check the inserted data using a [MySQL client](https://ubiq.co/database-blog/top-5-mysql-gui-tools-free-paid/), or by using the `get_quotes` method you have written earlier.
 
 ### TODO
+- Add edit view for a quote listed in the main page using the same `add.html` template also, make the url dynamic using something like `/edit/{id}`.
 - db relationship (2 tables)
 - auth
 - logging (directly to a separated db table)
