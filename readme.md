@@ -51,6 +51,7 @@ You can see your new container by typing `docker ps`.
 10. List all the existing quotes on the main page (the root route `/`). Here you can use the `get_quotes` method made earlier. You can add the edit feature as a button on each quote using its ID to form the link. Make the url dynamic using something like `/edit/{id}`.
 
 **Extra**
+
 11. Drop you current DB scheme and make 2 tables, `author` and `quote`. Don't forget to add a one-to-many relation between the tables [Check the 1-M example](https://www.tech-recipes.com/database/one-to-one-one-to-many-table-relationships-in-sql-server/), to let an author have more than one quote linked to him.
 12. Make a method `get_or_create_author` which searches in the `author` table for a provided name and returns the ID if exists. Otherwise, will create an author and will return the new ID.
 13. Make a new method that inserts one quote and use the method `get_or_create_author` to get an ID for the author. Use the author's ID to add the quote. In this way, you'll link quotes with the same author to a single author. 
@@ -67,6 +68,7 @@ The above query will join data from both tables, in our case `author` and `quote
 17. Create a method for the route mentioned before `/author/{id}/quotes` which will return a page with the author's quotes. Use the SQL JOIN query presented above.
 
 ### AUTH
+
 As an intro, the simplest way to do that is by using a decorator. Before executing the route method, the decorator will check if the user is authenticated.
 Flask's documentation provides an example for [auth decorator](https://flask.palletsprojects.com/en/2.1.x/patterns/viewdecorators/).
 
