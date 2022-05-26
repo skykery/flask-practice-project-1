@@ -77,6 +77,7 @@ In our case, we will check the user authentication by having the flag `logged_in
 2. Make a new route for login that accepts `GET` and `POST` requests. Handle the POST request by checking over some dummy data if the submitted data form match, and if it does, set the flag `logged_in` to `True` in the session and redirect the user somewhere. Otherwise, return an error. On the GET request, return the `login.html` template. You can add an extra argument for possible errors and render it in template if is not None.
 3. Make a new route for logout action that will remove the `logged_in` key, or set a False value to it. This way, the auth decorator will not let the user access protected routes anymore.
 4. Use the session to store everything you want related to the user (e.g. name) and access it from templates. You can add a simple HTML menu, where the Login button will be present if the user is not logged in. When he will be logged in, the login button will be replaced by a logout one and his username will be displayed in the same menu.
+5. Use the `login_required` decorator to protect some routes.
 
 ### TODO
 - [x] fix typo
